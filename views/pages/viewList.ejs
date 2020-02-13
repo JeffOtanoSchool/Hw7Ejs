@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="text-primary">
+  <div class="jumbotron">
+      <h2>Here are your groceries</h2>
+
+      <%if (groceryArray != null) { %>
+       
+        <ul class="list-group">
+            <% for(var i=0; i<groceryArray.length; i++) {%>
+              <li class="list-group-item"><%= "Item:  " + groceryArray[i].id  +  "       |        Quantity:  " + groceryArray[i].quantity %></li>
+            <% } %>
+          </ul>
+
+
+        <% } %>
+
+
+  </div>
+  </div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>

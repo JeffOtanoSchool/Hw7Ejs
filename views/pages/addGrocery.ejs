@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+<main>
+  <div class="text-primary">
+  <div class="jumbotron">
+      <h2>Add a grocery Item</h2>
+
+      <label for="groceryItem">Add an item</label>
+      <input class="form-control" type="text" id="groceryItem" name="groceryItem"><br>
+      <label for="quantity">Quantity</label>
+      <input class="form-control" type="text" id="quantity" name="quantity"><br>
+      <button class="btn btn-primary  " onclick="updateURL();">Add a grocery item </button>
+
+  </div>
+</div>
+</main>
+
+<footer>
+  <% include ../partials/footer %>
+</footer>
+<script type="text/javascript">
+
+  function updateURL() {
+    var myURL = (document.location).toString();
+    var n = myURL.indexOf("?");
+    myURL = myURL.substr(0, n); 
+    document.location = myURL + "?id=" + document.getElementById("groceryItem").value + 
+    "&quantity=" +  document.getElementById("quantity").value;
+    alert('Grocery added!');
+  }
+</script>
+
+</body>
+</html>
